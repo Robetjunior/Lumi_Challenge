@@ -2,9 +2,9 @@ import express, { Request, Response } from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import { sequelize } from './src/models';
-import invoiceRoutes from './src/routes/invoice'
+import routes from './src/routes';
 import bodyParser from 'body-parser';
-import { errorHandler } from './src/middlewares/erroHandler'
+import { errorHandler } from './src/middlewares/erroHandler';
 
 dotenv.config();
 
@@ -27,8 +27,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get('/', (req: Request, res: Response) => {
   res.send('Bem-vindo Lumis-Challenge');
 });
-
-app.use('/api/invoices', invoiceRoutes);
+app.use('/api', routes);
 
 app.use(errorHandler);
 
