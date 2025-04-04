@@ -56,7 +56,7 @@ export const createInvoice = async (req: Request, res: Response, next: NextFunct
       throw new Error(`Erro ao enviar o arquivo para o Supabase: ${uploadError.message}`);
     }
 
-    const fileUrl = `https://atvtfhsozmrogcxvnecp.supabase.co/storage/v1/object/public/faturas/${fileName}`;
+    const fileUrl = `${process.env.SUPABASE_URL}/storage/v1/object/public/faturas/${fileName}`;
     const sanitizedInvoiceData = InvoiceService.sanitizeInvoiceData(invoiceData, fileUrl);
     const newInvoice = await InvoiceService.createInvoice(sanitizedInvoiceData);
 
@@ -153,8 +153,7 @@ export const uploadInvoicesFromFolder = async (req: Request, res: Response, next
           throw new Error('Arquivo não encontrado.');
         }
         const invoiceData = await extractInvoiceData(filePath);
-        const fileBuffer = fs.readFileSync(filePath);
-        const fileUrl = `https://atvtfhsozmrogcxvnecp.supabase.co/storage/v1/object/public/faturas/${file}`;
+        const fileUrl = `${process.env.SUPABASE_URL}/storage/v1/object/public/faturas/${file}`;
         const sanitizedInvoiceData = InvoiceService.sanitizeInvoiceData(invoiceData, fileUrl);
         const newInvoice = await InvoiceService.createInvoice(sanitizedInvoiceData);
         fs.unlink(filePath, (err) => {
