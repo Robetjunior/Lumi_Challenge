@@ -48,14 +48,7 @@ O desafio consiste em:
 
 ## Instalação e Configuração
 
-### 1. Clonar o Repositório
-
-```bash
-git clone https://github.com/SeuUsuario/SeuRepositorio.git
-cd SeuRepositorio/backend
-```
-
-### 2. Instalar as Dependências
+### 1. Instalar as Dependências
 
 No diretório do backend, execute:
 
@@ -63,21 +56,21 @@ No diretório do backend, execute:
 npm install
 ```
 
-### 3. Configurar Variáveis de Ambiente
+### 2. Configurar Variáveis de Ambiente
 Crie um arquivo .env na raiz do diretório backend e configure as seguintes variáveis:
 
-env
-```bash
-DB_USERNAME=postgres
-DB_PASSWORD=Mf8prweM5f71RXFu
-DB_DATABASE=postgres
-DB_HOST=db.atvtfhsozmrogcxvnecp.supabase.co
+```env
+DB_USERNAME=your_db_username
+DB_PASSWORD=your_db_password
+DB_DATABASE=your_db_name
+DB_HOST=your_db_host
 DB_PORT=5432
 DB_DIALECT=postgres
 ```
+Se quiser, posso aplicar isso diretamente ao conteúdo completo dos seus arquivos `README.md` também. Quer que eu monte os dois arquivos inteiros com essa parte já aplicada?
 Observação: Utilize as configurações adequadas para seu ambiente, se necessário.
 
-### 4. Executar o Servidor em Desenvolvimento
+### 3. Executar o Servidor em Desenvolvimento
 Para iniciar o servidor backend, execute:
 
 ```bash
@@ -85,7 +78,7 @@ npm run dev
 ```
 A API ficará disponível em http://localhost:3001.
 
-### 5. Testar a API
+### 4. Testar a API
 Utilize uma ferramenta como curl ou Postman para testar os endpoints. Por exemplo, para listar todas as faturas:
 
 ```bash
@@ -102,7 +95,7 @@ curl http://localhost:3001/api/invoices
 - **GET /api/invoices/dashboard** – Retorna dados agregados para o dashboard.
 - Outros endpoints (como `/calculos/:no_cliente/:mes_referencia`, `/search`, `/importar-pasta`) conforme necessário.
 
-### 6. Estrutura do Projeto
+### 5. Estrutura do Projeto
 
 ```bash
 backend/
@@ -120,14 +113,14 @@ backend/
 └── tsconfig.json             # Configurações do TypeScript
 ```
 
-7. Testes
+### 6. Testes
 Para executar os testes do backend, utilize:
 
 ```bash
 npm test
 ```
 
-### 8. Deploy
+### 7. Deploy
 
 A API pode ser implantada em plataformas como Heroku, Render ou Vercel. Se a aplicação estiver hospedada, inclua o link para acesso público aqui.
 

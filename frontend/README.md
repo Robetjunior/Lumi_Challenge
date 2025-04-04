@@ -35,41 +35,34 @@ O sistema tem como finalidade:
 
 ## Tutorial: Como Executar o Projeto
 
-### 1. Clonar o Repositório
-
-```bash
-git clone https://github.com/SeuUsuario/SeuRepositorio.git
-cd SeuRepositorio
-```
-
-### 2. Instalar as Dependências
+### 1. Instalar as Dependências
 No diretório do projeto, execute:
 ```bash
 npm install
 ```
 
-### 3. Configurar Variáveis de Ambiente
+### 2. Configurar Variáveis de Ambiente
 Crie um arquivo .env na raiz do projeto e configure as variáveis necessárias para conectar com a API e outros serviços (exemplo):
 
 ```bash
-REACT_APP_SUPABASE_URL='https://yhivluwnxpbqwntxnmtn.supabase.co'
-REACT_APP_SUPABASE_KEY='SEU_SUPABASE_KEY_AQUI'
+REACT_APP_SUPABASE_URL=your_supabase_url
+REACT_APP_SUPABASE_KEY=your_supabase_key
 ```
 
-### 4. Executar o Projeto em Desenvolvimento
+### 3. Executar o Projeto em Desenvolvimento
 ```bash
 npm start
 ```
 A aplicação será iniciada e estará disponível no navegador em http://localhost:3000.
 
-### 5. Build para Produção
+### 4. Build para Produção
 Para criar uma versão otimizada para produção:
 
 ```bash
 npm run build
 ```
 
-### 6. Executar a API (Back-end)
+### 5. Executar a API (Back-end)
 No diretório do back-end (caso separado), instale as dependências, configure as variáveis de ambiente e execute a aplicação:
 ```bash
 npm install
