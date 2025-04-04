@@ -55,25 +55,12 @@ npm start
 ```
 A aplicação será iniciada e estará disponível no navegador em http://localhost:3000.
 
-### 4. Build para Produção
-Para criar uma versão otimizada para produção:
-
-```bash
-npm run build
-```
-
-### 5. Executar a API (Back-end)
+### 4. Executar a API (Back-end)
 No diretório do back-end (caso separado), instale as dependências, configure as variáveis de ambiente e execute a aplicação:
 ```bash
 npm install
-npm run migrate   # para configurar o banco de dados PostgreSQL
 npm start    
 ```
-
-npm install
-npm run migrate   # para configurar o banco de dados PostgreSQL
-npm start    
-
 
 ### Estrutura do Projeto
 ```bash
