@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Dashboard from './pages/Dashboard';
+import InvoiceLibrary from './pages/InvoiceLibrary';
 import Sidebar from './components/Sidebar';
 import { FaBars } from 'react-icons/fa';
 import './styles/global.css';
@@ -41,6 +42,7 @@ const App: React.FC = () => {
         <main className={`content ${!isSidebarOpen ? 'full-width' : ''}`}>
           <Routes>
             <Route path="/" element={<Dashboard />} />
+            <Route path="/invoices" element={<InvoiceLibrary />} />
           </Routes>
         </main>
       </div>
