@@ -45,14 +45,8 @@ Cada parte possui seu próprio `package.json`, mas foi criado um mecanismo de or
 - Node.js (versão 14 ou superior)
 - npm ou yarn
 
-### 1. Clonar o Repositório
 
-```bash
-git clone https://github.com/SeuUsuario/SeuRepositorio.git
-cd SeuRepositorio
-```
-
-### 2. Instalar as Dependências das Duas Partes
+### 1. Instalar as Dependências das Duas Partes
 No diretório raiz, execute o comando abaixo para instalar as dependências do backend e do frontend simultaneamente. Esse comando utiliza o pacote concurrently:
 
 ```bash
@@ -64,7 +58,7 @@ Observação: Certifique-se de que o pacote concurrently esteja instalado no rep
 npm install concurrently --save-dev
 ```
 
-### 3. Configurar Variáveis de Ambiente
+### 2. Configurar Variáveis de Ambiente
 Crie arquivos .env nas pastas /api e /frontend conforme necessário. Não inclua os valores reais neste repositório.
 Para obter os valores corretos das variáveis de ambiente, entre em contato com José Roberto Ferreira Junio (LinkedIn).
 
