@@ -77,6 +77,10 @@ DB_HOST=your_db_host
 DB_PORT=your_db_port
 DB_DIALECT=postgres
 PORT=3001
+# Supabase
+SUPABASE_URL=your_supabase_url
+SUPABASE_KEY=your_supabase_key
+
 ```
 
 Exemplo de arquivo .env para o Frontend (frontend/.env):
