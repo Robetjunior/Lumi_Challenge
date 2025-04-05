@@ -23,20 +23,17 @@ export const extractInvoiceData = async (filePath: string): Promise<InvoiceData>
   const data = await pdfParse(dataBuffer);
   const text = data.text;
 
-  console.log(text  )
   const energiaSceeLine = text.split('\n').find(line =>
     line.toLowerCase().includes('energia scee s/ icms')
   );
 
-  const extractCurrencyFromLine = (line: string, position: number): number => {
-    const matches = line.match(/-?\d{1,3}(?:\.\d{3})*,\d{2}/g);
-    if (!matches || !matches[position]) return 0;
-    return parseExtractedCurrencyValue(matches[position]);
-  };
-  
-  const energiaSceeValor = energiaSceeLine
-    ? extractCurrencyFromLine(energiaSceeLine, 1)
-    : 0;
+  const energiaSceeValor: number = energiaSceeLine
+  ? (() => {
+      const matches = energiaSceeLine.match(/\d{1,3}(?:\.\d{3})*,\d{2}/g);
+      if (!matches || matches.length < 2) return 0;
+      return parseExtractedCurrencyValue(matches[1]);
+    })()
+  : 0;
 
   const invoiceData: InvoiceData = {
     no_cliente: extractField(text, /Nº DO CLIENTE.*\n\s+(\d+)/),
@@ -64,9 +61,6 @@ export const extractInvoiceData = async (filePath: string): Promise<InvoiceData>
   return invoiceData;
 };
 
-
-
-// Função auxiliar para extrair campos do texto usando expressão regular
 const extractField = (text: string, regex: RegExp): string | null => {
   const match = text.match(regex);
   return match ? match[1] : null;
