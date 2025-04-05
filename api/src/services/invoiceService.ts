@@ -1,5 +1,6 @@
 import { Invoice } from '../models/invoice';
 import { Op } from 'sequelize';
+import { parseExtractedCurrencyValue } from '../utils/parseExtractedCurrencyValue';
 
 export const InvoiceService = {
   getAllInvoices: async () => {
@@ -120,16 +121,16 @@ export const InvoiceService = {
   sanitizeInvoiceData: (invoiceData: any, fileUrl: string) => ({
     no_cliente: invoiceData.no_cliente || '',
     mes_referencia: invoiceData.mes_referencia || '',
-    energia_eletrica_kwh: invoiceData.energia_eletrica_kwh || 0,
-    energia_eletrica_valor: invoiceData.energia_eletrica_valor || 0,
-    energia_sceee_kwh: invoiceData.energia_sceee_kwh || 0,
-    energia_sceee_valor: invoiceData.energia_sceee_valor || 0,
-    energia_compensada_kwh: invoiceData.energia_compensada_kwh || 0,
-    energia_compensada_valor: invoiceData.energia_compensada_valor || 0,
-    contrib_ilum_publica: invoiceData.contrib_ilum_publica || 0,
-    valor_total: invoiceData.valor_total || 0,
+    energia_eletrica_kwh: parseFloat(invoiceData.energia_eletrica_kwh) || 0,
+    energia_eletrica_valor: parseExtractedCurrencyValue(invoiceData.energia_eletrica_valor),
+    energia_sceee_kwh: parseFloat(invoiceData.energia_sceee_kwh) || 0,
+    energia_sceee_valor: parseExtractedCurrencyValue(invoiceData.energia_sceee_valor),
+    energia_compensada_kwh: parseFloat(invoiceData.energia_compensada_kwh) || 0,
+    energia_compensada_valor: parseExtractedCurrencyValue(invoiceData.energia_compensada_valor),
+    contrib_ilum_publica: parseExtractedCurrencyValue(invoiceData.contrib_ilum_publica),
+    valor_total: parseExtractedCurrencyValue(invoiceData.valor_total),
     nome_uc: invoiceData.nome_uc || '',
     distribuidora: invoiceData.distribuidora || '',
     pdf_url: fileUrl,
-  })
+  }),
 };
