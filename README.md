@@ -7,7 +7,7 @@ Este repositório contém o projeto desenvolvido para o **Teste Técnico para De
 - **API RESTful:** Disponibilização dos dados através de uma API construída com Node.js, Express e TypeScript.
 - **Interface Web (Frontend):** Aplicação React com TypeScript que consome a API e apresenta os dados em forma de dashboard e biblioteca de faturas, com gráficos interativos (usando Recharts) e uma interface responsiva.
 
-> **Importante:** As variáveis de ambiente (.env) não contêm os valores reais. Para obter esses valores, entre em contato com **José Roberto Ferreira Junio** através do [LinkedIn](https://www.linkedin.com/in/jos%C3%A9-roberto-dev/).
+> **Importante:** As variáveis de ambiente (.env) não contêm os valores reais. Para obter esses valores, entre em contato com **José Roberto Ferreira Junior** através do [LinkedIn](https://www.linkedin.com/in/jos%C3%A9-roberto-dev/).
 
 ---
 
