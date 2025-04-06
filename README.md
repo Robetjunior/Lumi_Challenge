@@ -83,7 +83,13 @@ REACT_APP_SUPABASE_URL=your_supabase_url
 REACT_APP_SUPABASE_KEY=your_supabase_key
 ```
 
-### Como Iniciar
+## Como Iniciar o Projeto
+
+No diretório raiz, utilize o seguinte comando para iniciar **simultaneamente** o backend e o frontend:
+
+```bash
+npm run start-all
+```
 
 Esse comando iniciará:
 - 🔵 **Backend**: Executado com `npm run dev` na pasta `/api` (rodando em [http://localhost:3001](http://localhost:3001)).

@@ -3,15 +3,14 @@
     "version": "1.0.0",
     "private": true,
     "workspaces": [
-      "api",
-      "frontend"
+        "api",
+        "frontend"
     ],
     "scripts": {
-      "install-all": "npm install --workspaces",
-      "start-all": "concurrently \"npm run dev --workspace=api\" \"npm start --workspace=frontend\""
+        "install-all": "npm install --workspaces",
+        "start-all": "concurrently \"npm run dev --workspace=api\" \"npm start --workspace=frontend\""
     },
     "devDependencies": {
-      "concurrently": "^8.0.1"
+        "concurrently": "^8.2.2"
     }
-  }
-  
+}
